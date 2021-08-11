@@ -53,7 +53,8 @@ AS $function$
                 mark_as_done,
                 stage,
                 is_metabase_purchase_sync,
-                is_metabase_inventory_sync
+                is_metabase_inventory_sync,
+                is_metabase_inventory_product_sync
             )
             VALUES(
                 receipt_date,
@@ -80,6 +81,7 @@ AS $function$
                 (purchase_qty * CAST(product_temp.standard_selling_price AS FLOAT)),
                 FALSE,
                 1,
+                FALSE,
                 FALSE,
                 FALSE
             );

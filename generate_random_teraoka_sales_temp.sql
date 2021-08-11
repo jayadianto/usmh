@@ -23,7 +23,9 @@ AS $function$
                 mark_as_done, 
                 stage, 
                 is_metabase_pos_sync, 
-                is_metabase_inventory_sync
+                is_metabase_sales_hour_sync, 
+                is_metabase_inventory_sync,
+                is_metabase_inventory_product_sync
             )
             VALUES(
                 product_code_temp, 
@@ -34,6 +36,8 @@ AS $function$
                 FALSE, 
                 1, 
                 FALSE, 
+                FALSE, 
+                FALSE,
                 FALSE
             );
         END LOOP;

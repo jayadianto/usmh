@@ -42,7 +42,8 @@ AS $function$
                 total_amount, 
                 mark_as_done,
                 stage,
-                is_metabase_inventory_sync
+                is_metabase_inventory_sync,
+                is_metabase_inventory_product_sync
             )
             VALUES(
                 store_code_temp, 
@@ -55,6 +56,7 @@ AS $function$
                 (waste_qty * CAST(product_temp.standard_selling_price AS FLOAT)), 
                 FALSE,
                 1,
+                FALSE,
                 FALSE
             );
         END LOOP;
